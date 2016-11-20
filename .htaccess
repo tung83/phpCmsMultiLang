@@ -1,0 +1,41 @@
+Options -Multiviews
+
+RewriteEngine On
+
+
+RewriteBase /
+
+#RewriteCond %{HTTP_HOST} ^mekogas.com.vn
+#RewriteRule (.*) http://www.mekogas.com.vn/$1 [R=301,L]
+
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule .* - [L]
+
+RewriteRule ^(vi|en)$ index.php?lang=$1
+#product paging
+RewriteRule ^(vi|en)/(tim-kiem|search)/page([0-9]+)/(.*)$ index.php?lang=$1&view=$2&page=$3&hint=$4
+RewriteRule ^(vi|en)/(tim-kiem|search)/(.*)$ index.php?lang=$1&view=$2&hint=$3
+RewriteRule ^(vi|en)/([a-zA-Z0-9_-]+)/page([0-9]+)$ index.php?lang=$1&view=$2&page=$3
+RewriteRule ^(vi|en)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]*)-p([0-9]+)/page([0-9]+)$ index.php?lang=$1&view=$2&pId=$4&page=$5
+
+RewriteRule ^(vi|en)/([a-zA-Z0-9_-]+)$ index.php?lang=$1&view=$2
+RewriteRule ^(vi|en)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-p([0-9]+)$ index.php?lang=$1&view=$2&pId=$4
+RewriteRule ^(vi|en)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-i([0-9]+)$ index.php?lang=$1&view=$2&id=$4
+RewriteRule ^(vi|en)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ index.php?lang=$1&view=$2&act=$3
+#product paging
+RewriteRule ^(vi|en)/([a-zA-Z0-9_-]+)/page([0-9]+)$ index.php?lang=$1&view=$2&page=$3
+RewriteRule ^(vi|en)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]*)-p([0-9]+)/page([0-9]+)$ index.php?lang=$1&view=$2&pId=$4&page=$5
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-i([0-9]+)$ index.php?view=$1&id=$3
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-cate([0-9]+)$ index.php?view=$1&cate_id=$3
+
+#RewriteRule ^([a-zA-Z0-9_-]+)/([0-9]+)/([a-zA-Z0-9_-]+)-p([0-9]+)$ index.php?view=$1&page=$2
+
+RewriteRule ^tim-kiem/(.*)$ index.php?view=tim-kiem&hint=$1
+
+
+
+
+
+
+

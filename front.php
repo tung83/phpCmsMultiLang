@@ -1,0 +1,45 @@
+<?php
+$css=array(
+    'font-awesome',
+    'bootstrap.min',
+    'jquery-ui',
+    'magnific-popup',
+    'jAlert-v3',
+    'animate',    
+    'layerslider',
+    'slick',
+    'slick-theme',
+    'flexslider',
+    'responsive',
+    'default',
+    'component',
+    'ribbon',
+    'hover',
+    'nice-tabs',
+    'self'
+);
+$js=array(
+    'jquery',
+    'jquery-ui',
+    'jquery-migrate',
+    'bootstrap.min',
+    'validator.min',
+    'jquery.magnific-popup',
+    'jAlert-v3',
+    'jAlert-functions',
+    'jquery.isotope.min',
+    'layerslider',
+    'layerslider.greensock',
+    'layerslider.transitions',
+    'wow',
+    'slick.min',
+    'jquery.flexslider',
+    'modernizr.custom.new',
+    'toucheffects',
+    'self'
+);
+include_once 'config.php';
+include_once 'lang/'.$lang.'.php';
+define('limit',5);
+define('pd_lim',6);
+?>
